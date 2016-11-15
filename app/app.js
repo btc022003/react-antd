@@ -35,7 +35,7 @@ const DevTools = createDevTools(
 //)
 //
 //通过thunk中间件处理异步服务器取数据问题
-const store - compose(applyMiddleware(thunk))(createStore)(
+const store = compose(applyMiddleware(thunk))(createStore)(
     reducer,
     DevTools.instrument()
 )
