@@ -6,6 +6,6 @@ export function on_save(data){
         data:data
     }
 }
-export function load_data(dispatch){
-    return ()=>apis.get_blog_data(dispatch)
+export function load_data(dispatch,page){
+    return ()=>apis.get_blog_data(dispatch,page)
 }

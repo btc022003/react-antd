@@ -11,7 +11,7 @@ class Home extends Component{
         console.dir(this)
         const {blogs,dispatch} = this.props
         this.actions = bindActionCreators(BlogActions,dispatch)
-        this.actions.load_data(dispatch)
+        this.actions.load_data(dispatch,1)
         this.state = {}
      }
 
@@ -31,11 +31,11 @@ class Home extends Component{
                 <a onClick={this.changeTitle.bind(this)}>改变标题</a>
                 <h3>这个是首页</h3>
                 <h1>{this.props.blogs.title}</h1>
-                <div>
+                <div style={{backgroundColor:'#ececec',padding:'20px'}}>
                 {this.props.blogs.list.map(function(item){
                     return(<Row key={item.id}>
-                        <Col span="8">
-                            <Card title={item.title}>{item.desc}</Card>
+                        <Col span="24">
+                            <Card title={item.title}>{item.target}</Card>
                         </Col>
                     </Row>)
                 })}
